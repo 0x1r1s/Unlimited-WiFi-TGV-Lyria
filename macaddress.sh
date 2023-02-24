@@ -16,10 +16,10 @@ do
 
   remaining_data=$(echo "$response" | jq -r '.remaining_data')
 
-  while [ "$remaining_data" -gt 10000]
+  while [ "$remaining_data" -gt 10000 ]
   do
     echo "Remaining Data: $remaining_data"
-    sleep 5
+    sleep 60
     response=$(curl -s "$url")
     remaining_data=$(echo "$response" | jq -r '.remaining_data')
   done
